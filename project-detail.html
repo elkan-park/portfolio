@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title id="seoTitle">Project Detail | Elkan Park</title>
+    <meta name="description" id="seoDesc" content="Project detail page">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" id="ogTitle" content="Project Detail | Elkan Park">
+    <meta property="og:description" id="ogDesc" content="Project detail page">
+    <meta property="og:image" id="ogImage" content="">
+
+    <link rel="stylesheet" href="project-detail.css">
+</head>
+
+<body>
+<div class="detail-page">
+
+    <header class="detail-header">
+        <a id="backBtn" href="index.html" class="back-btn">← Back</a>
+
+        <div class="lang-switch" aria-label="Language selector">
+            <button class="lang-btn" type="button" data-lang="ko">한국</button>
+            <button class="lang-btn" type="button" data-lang="zh">中文</button>
+            <button class="lang-btn" type="button" data-lang="en">English</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="detail-hero">
+            <p id="detailLabel" class="detail-label"></p>
+            <h1 id="detailTitle"></h1>
+            <p id="detailBrief"></p>
+        </section>
+
+        <section class="detail-carousel" aria-label="Project screenshots">
+            <div class="carousel-wrapper">
+                <div class="carousel-slide visible" id="slide0"></div>
+                <div class="carousel-slide" id="slide1"></div>
+                <div class="carousel-slide" id="slide2"></div>
+
+                <button class="carousel-prev" type="button" aria-label="Previous image">‹</button>
+                <button class="carousel-next" type="button" aria-label="Next image">›</button>
+            </div>
+        </section>
+
+        <section class="detail-content">
+            <article class="detail-card">
+                <h2 id="overviewHeading">Overview</h2>
+                <p id="detailOverview"></p>
+            </article>
+
+            <article class="detail-card">
+                <h2 id="stackHeading">Tech Stack</h2>
+                <div id="detailTags" class="tag-list"></div>
+            </article>
+
+            <article class="detail-card">
+                <h2 id="dataHeading">Key Data</h2>
+                <div id="detailData" class="data-box"></div>
+            </article>
+        </section>
+    </main>
+
+</div>
+
+<script src="project-detail.js"></script>
+</body>
+</html>

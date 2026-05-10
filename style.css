@@ -1,0 +1,98 @@
+/* 基本字体与容器 */
+*{box-sizing:border-box}
+body{margin:0;font-family:"Pretendard",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#fff;color:#222;line-height:1.6}
+.page{max-width:1180px;margin:0 auto;padding:28px 20px 80px}
+
+/* 语言切换 */
+.lang-switch{display:flex;gap:8px;justify-content:flex-end;margin-bottom:24px}
+.lang-btn{padding:6px 12px;border-radius:8px;border:1px solid #dcdcdc;background:#f7f7f7;font-weight:600;cursor:pointer}
+.lang-btn.active{background:#000;color:#fff;border-color:#000}
+button:focus-visible,.project-card:focus-visible{outline:3px solid #7aa7ff;outline-offset:3px}
+
+/* Intro */
+.intro-section{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:28px;margin-bottom:80px}
+.intro-left{flex:1 1 360px}
+.intro-title{font-size:clamp(34px,5vw,44px);margin:0 0 12px;line-height:1.18}
+.intro-desc{color:#666;font-size:18px}
+
+/* profile */
+.intro-right{flex:0 1 400px}
+.profile-card{width:min(100%,400px);background:#fff;padding:26px;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,0.06)}
+.avatar{width:100px;height:100px;border-radius:50%;object-fit:cover;display:block;margin-bottom:14px}
+.profile-name{font-size:22px;margin:0}
+.profile-role{color:#666;margin:6px 0 14px}
+.info-row{display:flex;justify-content:space-between;margin:6px 0}
+.info-label{color:#777}
+
+/* Skills */
+.skills-section{margin-bottom:70px}
+.section-title{font-size:28px;margin-bottom:18px}
+.skill-item{margin-bottom:16px}
+.skill-label{display:block;font-weight:600;margin-bottom:6px}
+.skill-bar{width:100%;height:12px;background:#f1f1f1;border-radius:8px;overflow:hidden}
+.skill-fill{height:100%;background:linear-gradient(90deg,#111,#444);transition:width .6s ease}
+
+/* Projects 样式优化 */
+.projects-grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.project-card{background:#fff;padding:0;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,0.06);overflow:hidden;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease;}
+.project-card:hover,.project-card:focus-visible{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,0.09);}
+.project-thumb{width:100%;height:180px;object-fit:cover;display:block;}
+.project-title{font-size:18px;font-weight:600;margin:12px 16px 4px;}
+.project-desc{font-size:14px;color:#555;margin:0 16px 12px;line-height:1.4;}
+.project-tags{display:flex;flex-wrap:wrap;gap:6px;padding:0 16px 16px;}
+.project-tags span{background:#f1f1f1;padding:4px 8px;border-radius:8px;font-size:12px;font-weight:600;}
+
+/* ====== Modal 样式 ====== */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);backdrop-filter:blur(2px);justify-content:center;align-items:center;z-index:1200;padding:20px}
+.modal-overlay[aria-hidden="false"]{display:flex}
+
+.modal { position: relative; display: flex; flex-direction: row; width: 100%; max-width: 980px; max-height: calc(100vh - 40px); background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.18); z-index: 1000; }
+.modal-left { width: 55%; position: relative; background: #000; min-height: 360px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.modal-right { width: 45%; padding: 28px 24px; display: flex; flex-direction: column; justify-content: flex-start; position: relative; z-index: 2; }
+
+/* Loading */
+.modal-loading { position: absolute; inset: 0; background: rgba(255,255,255,0.8); display: flex; justify-content: center; align-items: center; z-index: 10; opacity: 0; pointer-events: none; transition: opacity 0.25s ease; }
+.modal-loading.show { opacity: 1; pointer-events: all; }
+.modal-loading::after { content:""; width:40px;height:40px;border:4px solid #ccc;border-top-color:#111;border-radius:50%;animation:spin 0.8s linear infinite; }
+@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+
+/* Carousel slides */
+.modal-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity .35s ease; z-index: 1; }
+.modal-slide.visible { opacity: 1; z-index: 1; }
+
+/* Carousel buttons */
+.modal-prev, .modal-next { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.9); border: 0; padding: 8px 12px; border-radius: 10px; cursor: pointer; font-size: 18px; z-index: 5; }
+.modal-prev { left: 12px; }
+.modal-next { right: 12px; }
+
+/* Right side content */
+.modal-close { position: absolute; right: 16px; top: 16px; border: 0; background: #eee; padding: 6px 10px; border-radius: 8px; cursor: pointer; z-index: 2; }
+#modalTitle { font-size: 24px; margin: 0 0 8px; font-weight: 700; }
+#modalBrief { color: #555; margin: 0 0 12px; line-height: 1.5; }
+.modal-tags { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px; }
+.modal-tags .tag { background: #f1f1f1; padding: 6px 10px; border-radius: 8px; font-weight: 600; font-size: 13px; }
+.modal-data { margin-top: 18px; color: #444; line-height: 1.7; }
+.modal-data .data-line { margin-bottom: 6px; }
+.modal-detail-btn { margin-top: auto; padding: 12px 14px; border-radius: 10px; background: #111; color: #fff; border: 0; cursor: pointer; width:100%; font-weight: 600; transition: 0.2s; z-index: 2; }
+.modal-detail-btn:hover { background:#000; }
+
+/* responsive */
+@media (max-width: 820px){
+    .page{padding:20px 16px 64px}
+    .lang-switch{justify-content:flex-start}
+    .intro-section{margin-bottom:56px}
+    .intro-right{flex-basis:100%}
+    .info-row{gap:16px;align-items:flex-start}
+    .info-value{text-align:right;word-break:break-word}
+    .modal{flex-direction:column;overflow:auto}
+    .modal-left,.modal-right{width:100%}
+    .modal-left{min-height:260px}
+    .modal-prev,.modal-next{display:none}
+}
+
+@media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+}
+
+/* Footer */
+.footer{text-align:center;color:#888;margin-top:48px;padding-bottom:20px}
